@@ -1,0 +1,93 @@
+{
+  "name": "hello-world-demo",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "859b70cc-778e-4fde-bfc7-1510ee70296b",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "535917bb-e128-4db2-858d-4e7c965ebb64",
+              "name": "message",
+              "value": "Hello World from n8n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "79f8a2d0-9df7-47da-8487-d36d787f397e",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        16,
+        192
+      ],
+      "id": "9cec73e7-45fa-48b8-8f6a-b7d18fdcfa63",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "2d0c0708-f964-4b1b-b46a-dc99a6aa8bc1",
+  "meta": {
+    "instanceId": "81a9ef8c4a4de4eb681bd15a8e09c1e45b7c190717e05725ac046cbf4c7ef6dc"
+  },
+  "id": "CHRIsoeotwFTSi23",
+  "tags": []
+}
